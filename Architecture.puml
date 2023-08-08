@@ -1,0 +1,36 @@
+@startuml
+node "school-bootstrap"
+
+package "Presentation" {
+  node "school-rest"
+}
+
+package "Domain" {
+  node "school-domain"
+}
+
+
+package "Application Service" {
+  node "school-application"
+}
+
+package "Infrastructrue" {
+  node "school-data-jpa"
+}
+
+database "H2" {
+
+}
+
+
+[school-bootstrap] --> [school-rest]
+[school-bootstrap] --> [school-data-jpa]
+
+[school-data-jpa] --> [school-domain]
+[school-application] --> [school-domain]
+
+[school-rest] --> [school-application]
+[school-data-jpa] -[dashed]->H2 : use
+
+
+@enduml

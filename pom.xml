@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.com</groupId>
+    <artifactId>school-service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>school-service</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>school-bootstrap</module>
+        <module>school-application</module>
+        <module>school-data-jpa</module>
+        <module>school-domain</module>
+        <module>school-rest</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring.boot.version>2.3.4.RELEASE</spring.boot.version>
+        <org.mapstruct.version>1.3.0.Final</org.mapstruct.version>
+        <org.projectlombok.version>1.18.10</org.projectlombok.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <pact.version>4.0.10</pact.version>
+        <cucumber.version>6.11.0</cucumber.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${org.projectlombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- booties -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- local -->
+            <dependency>
+                <groupId>org.com</groupId>
+                <artifactId>school-application</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.com</groupId>
+                <artifactId>school-bootstrap</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.com</groupId>
+                <artifactId>school-data-jpa</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.com</groupId>
+                <artifactId>school-domain</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.com</groupId>
+                <artifactId>school-rest</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>au.com.dius</groupId>
+                <artifactId>pact-jvm-provider-junit5</artifactId>
+                <version>${pact.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- Cucumber dependencies -->
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-java</artifactId>
+                <version>${cucumber.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-junit</artifactId>
+                <version>${cucumber.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-spring</artifactId>
+                <version>${cucumber.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

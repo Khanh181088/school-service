@@ -1,0 +1,32 @@
+@startuml
+
+class StudentEntity {
+    #Name
+    #Price
+    #Brand
+    #Colour
+    #LatestPrice
+    #Prices
+}
+
+class PriceEntity {
+    #Amount
+    #Date
+    #Student
+}
+
+class OrderEntity {
+    #Id
+    #DateTime
+    #OrderDetails
+}
+
+class OrderDetailEntity {
+    #Id
+    #Quantity
+    #Status
+}
+
+StudentEntity }|-- PriceEntity
+OrderEntity }|-- OrderDetailEntity
+@enduml

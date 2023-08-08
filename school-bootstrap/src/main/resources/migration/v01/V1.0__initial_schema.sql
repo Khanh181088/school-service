@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table STUDENT
+--------------------------------------------------------
+CREATE TABLE STUDENT
+(
+    "ID" NUMBER(12,0) NOT NULL,
+    "NAME" VARCHAR2(40 CHAR),
+    "MATH" NUMBER(12,2),
+    "PHYSICS" NUMBER(12,2),
+    "CHEMISTRY" NUMBER(12,2)
+);
+
+ALTER TABLE "STUDENT" ADD CONSTRAINT "PK_STUDENT" PRIMARY KEY ("ID");
+
+CREATE SEQUENCE SEQ_STUDENT MINVALUE 1 MAXVALUE 999999999999999 INCREMENT BY 1 CACHE 100;
+
