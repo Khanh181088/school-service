@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import org.school.domain.entity.Student;
 import org.school.domain.repository.StudentRepository;
 import org.school.domain.vo.StudentCriteria;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
